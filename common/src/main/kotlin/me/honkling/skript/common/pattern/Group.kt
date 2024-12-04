@@ -27,11 +27,8 @@ data class Group(val elements: List<PatternElement>) : PatternElement {
 
             index += matchResult.size
 
-            if (element is RegEx)
-                regexes.addAll(matchResult.regexes)
-
-            if (element is Expression)
-                expressions.add(matchResult.expressions[0])
+            regexes.addAll(matchResult.regexes)
+            expressions.addAll(matchResult.expressions)
         }
 
         return MatchResult(index, regexes, expressions)
