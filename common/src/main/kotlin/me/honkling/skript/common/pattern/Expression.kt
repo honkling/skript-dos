@@ -47,9 +47,6 @@ data class Expression(private val type: Type<*>) : PatternElement {
                 value += input[index++].digitToInt()
             }
 
-            if (index < input.length && !input[index].isWhitespace())
-                return@run
-
             return MatchResult(
                 index,
                 expressions = listOf(PrimitiveInteger(value))
