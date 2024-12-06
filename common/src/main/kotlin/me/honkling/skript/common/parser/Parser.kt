@@ -182,7 +182,7 @@ class Parser(
             }
 
         if (message != null)
-            logger.error(message)
+            logger.error("$message: ${location.input}")
 
         return null
     }
